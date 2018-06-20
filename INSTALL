@@ -21,7 +21,7 @@ use the autogen script to prepare the build environment.
     make
 
 Precompiled binaries are available at github, see
-https://github.com/dashpay/dash-binaries
+https://github.com/dimon-280894/simple-coin-test-binaries
 
 Always verify the signatures and checksums.
 
