@@ -1,15 +1,15 @@
 [Unit]
-Description=Dash's distributed currency daemon
+Description=Simplecointest's distributed currency daemon
 After=network.target
 
 [Service]
-User=dashcore
-Group=dashcore
+User=simplecointestcore
+Group=simplecointestcore
 
 Type=forking
-PIDFile=/var/lib/dashd/dashd.pid
-ExecStart=/usr/bin/dashd -daemon -pid=/var/lib/dashd/dashd.pid \
--conf=/etc/dashcore/dash.conf -datadir=/var/lib/dashd -disablewallet
+PIDFile=/var/lib/simplecointestd/simplecointestd.pid
+ExecStart=/usr/bin/simplecointestd -daemon -pid=/var/lib/simplecointestd/simplecointestd.pid \
+-conf=/etc/simplecointestcore/simplecointest.conf -datadir=/var/lib/simplecointestd -disablewallet
 
 Restart=always
 PrivateTmp=true

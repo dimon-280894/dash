@@ -1,7 +1,7 @@
 # Linearize
 Construct a linear, no-fork, best version of the blockchain.
 
-## Step 0: Install dash_hash
+## Step 0: Install simplecointest_hash
 
 https://github.com/dimon-280894/simple-coin-test_hash
 

@@ -1,12 +1,12 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Dash
-Comment=Dash P2P Cryptocurrency
-Comment[fr]=Dash, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Dash, eşten eşe kriptografik sanal para birimi
-Exec=dash-qt %u
+Name=Simplecointest
+Comment=Simplecointest P2P Cryptocurrency
+Comment[fr]=Simplecointest, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Simplecointest, eşten eşe kriptografik sanal para birimi
+Exec=simplecointest-qt %u
 Terminal=false
 Type=Application
-Icon=dash128
-MimeType=x-scheme-handler/dash;
+Icon=simplecointest128
+MimeType=x-scheme-handler/simplecointest;
 Categories=Office;Finance;

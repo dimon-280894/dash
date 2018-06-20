@@ -7,13 +7,13 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/dash
-src/dashd
-src/dash-cli
-src/dash-tx
-src/test/test_dash
-src/qt/test/test_dash-qt
-src/bench/bench_dash
+src/simplecointest
+src/simplecointestd
+src/simplecointest-cli
+src/simplecointest-tx
+src/test/test_simplecointest
+src/qt/test/test_simplecointest-qt
+src/bench/bench_simplecointest
 
 # autoreconf
 Makefile.in
@@ -36,8 +36,8 @@ config.log
 config.status
 configure
 libtool
-src/config/dash-config.h
-src/config/dash-config.h.in
+src/config/simplecointest-config.h
+src/config/simplecointest-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -63,7 +63,7 @@ libconftest.dylib*
 *.o
 *.o-*
 *.patch
-.dash
+.simplecointest
 *.a
 *.pb.cc
 *.pb.h
@@ -82,12 +82,12 @@ libconftest.dylib*
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-dash-qt
-Dash-Qt.app
+simplecointest-qt
+Simplecointest-Qt.app
 
 # Unit-tests
 Makefile.test
-dash-qt_test
+simplecointest-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -101,7 +101,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_dash.coverage/
+test_simplecointest.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -124,12 +124,12 @@ share/BitcoindComparisonTool.jar
 .autotools
 /doc/doxygen/
 
-libdashconsensus.pc
-src/qt/dash-qt.bash
+libsimplecointestconsensus.pc
+src/qt/simplecointest-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-dash-cli
-dashd
-dash-qt
+simplecointest-cli
+simplecointestd
+simplecointest-qt
 make

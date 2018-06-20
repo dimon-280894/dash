@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. dash_test
+	$(MAKE) -C .. simplecointest_test
 clean:
-	$(MAKE) -C .. dash_test_clean
+	$(MAKE) -C .. simplecointest_test_clean
 check:
-	$(MAKE) -C .. dash_test_check
+	$(MAKE) -C .. simplecointest_test_check
