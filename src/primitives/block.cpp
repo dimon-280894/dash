@@ -12,7 +12,17 @@
 
 uint256 CBlockHeader::GetHash() const
 {
-    return HashX11(BEGIN(nVersion), END(nNonce));
+    uint256 thash;
+    unsigned int profile = 0x0;
+
+    if (nTime <= LYRA2Z_TIMESTAMP) {
+        neoscrypt((unsigned char *) &nVersion, (unsigned char *) &thash, profile);
+    } else {
+        lyra2z_hash(BEGIN(nVersion), BEGIN(thash));
+    }
+
+    return thash;
+
 }
 
 std::string CBlock::ToString() const
