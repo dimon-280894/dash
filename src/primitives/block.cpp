@@ -12,16 +12,9 @@
 
 uint256 CBlockHeader::GetHash() const
 {
-    uint256 thash;
-    unsigned int profile = 0x0;
-
-    if (nTime <= LYRA2Z_TIMESTAMP) {
-        neoscrypt((unsigned char *) &nVersion, (unsigned char *) &thash, profile);
-    } else {
-        lyra2z_hash(BEGIN(nVersion), BEGIN(thash));
-    }
-
-    return thash;
+    uint256 powHash;
+    lyra2z_hash(BEGIN(nVersion), BEGIN(powHash));
+    return powHash;
 
 }
 
