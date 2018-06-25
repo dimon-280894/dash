@@ -9,6 +9,7 @@
 #include "tinyformat.h"
 #include "utilstrencodings.h"
 #include "crypto/common.h"
+#include "crypto/Lyra2Z/Lyra2Z.h"
 
 uint256 CBlockHeader::GetHash() const
 {
