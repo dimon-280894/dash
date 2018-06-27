@@ -100,7 +100,7 @@ public:
         // Хеш BIP 34 - это хеш-блок, в котором BIP 34 был полностью активирован, и все блоки, меньшие либо равные этой версии, были отклонены как недействительные.
         // У нас уже нулевой блок должен быть верным как я понял. (так же делают gin и inf), мб до 12-ого дэша тут должна была быть 1ца
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00000012FF521FE5076B142B7E31B89D32CFF7484BEB59AE8725C60B665D8319");
+        consensus.BIP34Hash = uint256S("0x0000093FA48AC253EF92C87D7C9371851EA2780A14B54DE2F8FA6455E7CEC2C5");
 
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         // Судя по всему нефига не актуальный параметр, пересчет сложности происходит каждый блок
@@ -155,11 +155,11 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1530748800, 2024526, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1530748800, 809355, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         std::cout << consensus.hashGenesisBlock << std::endl;
-        assert(consensus.hashGenesisBlock == uint256S("0x00000012FF521FE5076B142B7E31B89D32CFF7484BEB59AE8725C60B665D8319"));
-        assert(genesis.hashMerkleRoot == uint256S("0x08A6569CEFBF61A470BDB9764076F91FA11B7138E17765D8D819E374715C35CF"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000093FA48AC253EF92C87D7C9371851EA2780A14B54DE2F8FA6455E7CEC2C5"));
+        assert(genesis.hashMerkleRoot == uint256S("0x041625D3EA2EAEB1E79E3FAEA3063FE383D746365C7237C2CF3021B478B722B7"));
 
         // Не устанавливаем никаких днс-сидов, хз во что это выльется
         vSeeds.clear();
@@ -193,7 +193,7 @@ public:
         // У нас только один изветсный блок это 0-ой генезис.
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x00000012FF521FE5076B142B7E31B89D32CFF7484BEB59AE8725C60B665D8319")),
+            (  0, uint256S("0x0000093FA48AC253EF92C87D7C9371851EA2780A14B54DE2F8FA6455E7CEC2C5")),
             1530748800, // * UNIX timestamp of last checkpoint block
             0,          // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
@@ -228,7 +228,7 @@ public:
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00000624F14189295AA5E9E23BA94431F24379F8626842D74089D4E884EBE0A9");
+        consensus.BIP34Hash = uint256S("0x00000B08ECF1D834C4C16E38E42AD5E32D7AA0E471EDFD004BA981DE5920CBFA");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 90; // Simplecointest: 90 seconds
         consensus.nPowTargetSpacing = 90; // Simplecointest: 90 seconds
@@ -270,10 +270,10 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1530748801, 1055933, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1530748801, 1299500, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000624F14189295AA5E9E23BA94431F24379F8626842D74089D4E884EBE0A9"));
-        assert(genesis.hashMerkleRoot == uint256S("0x08A6569CEFBF61A470BDB9764076F91FA11B7138E17765D8D819E374715C35CF"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000B08ECF1D834C4C16E38E42AD5E32D7AA0E471EDFD004BA981DE5920CBFA"));
+        assert(genesis.hashMerkleRoot == uint256S("0x041625D3EA2EAEB1E79E3FAEA3063FE383D746365C7237C2CF3021B478B722B7"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -306,7 +306,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (    0, uint256S("0x00000624F14189295AA5E9E23BA94431F24379F8626842D74089D4E884EBE0A9")),
+            (    0, uint256S("0x00000B08ECF1D834C4C16E38E42AD5E32D7AA0E471EDFD004BA981DE5920CBFA")),
 
             1530748801, // * UNIX timestamp of last checkpoint block
             0,       // * total number of transactions between genesis and last checkpoint
