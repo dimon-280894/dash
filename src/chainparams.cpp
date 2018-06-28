@@ -100,7 +100,7 @@ public:
         // Хеш BIP 34 - это хеш-блок, в котором BIP 34 был полностью активирован, и все блоки, меньшие либо равные этой версии, были отклонены как недействительные.
         // У нас уже нулевой блок должен быть верным как я понял. (так же делают gin и inf), мб до 12-ого дэша тут должна была быть 1ца
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00003AA4D82F77798F697A9AF6B6B0A42600C92B56355CE646A9D72B8BC4ED0E");
+        consensus.BIP34Hash = uint256S("0x00000C0D3473724FDEABFF6C5DE692CE03D18451F78EDDBD53983AFCBC3DCB3A");
 
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         // Судя по всему нефига не актуальный параметр, пересчет сложности происходит каждый блок
@@ -155,7 +155,7 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1530748800, 809355, 0x1f00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1530748800, 35156, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         FILE *genesisFile = fopen("genesis.bin", "w");
         fprintf(genesisFile, "%s", consensus.hashGenesisBlock.GetHex().c_str());
@@ -165,8 +165,8 @@ public:
         fprintf(merkleFile, "%s", genesis.hashMerkleRoot.GetHex().c_str());
         fclose(merkleFile);
 
-        assert(consensus.hashGenesisBlock == uint256S("0x00003AA4D82F77798F697A9AF6B6B0A42600C92B56355CE646A9D72B8BC4ED0E"));
-        assert(genesis.hashMerkleRoot == uint256S("0x9B0F986233C42BE16CC86528DEED54902241A2F309EEB556B07D086F9E829974"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000C0D3473724FDEABFF6C5DE692CE03D18451F78EDDBD53983AFCBC3DCB3A"));
+        assert(genesis.hashMerkleRoot == uint256S("0xD6590146B4F2DB94A85E9CB63E9953437FE731D74B0DF8B6267E2E6B039F8CA5"));
 
         // Не устанавливаем никаких днс-сидов, хз во что это выльется
         vSeeds.clear();
@@ -200,7 +200,7 @@ public:
         // У нас только один изветсный блок это 0-ой генезис.
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x00003AA4D82F77798F697A9AF6B6B0A42600C92B56355CE646A9D72B8BC4ED0E")),
+            (  0, uint256S("0x00000C0D3473724FDEABFF6C5DE692CE03D18451F78EDDBD53983AFCBC3DCB3A")),
             1530748800, // * UNIX timestamp of last checkpoint block
             0,          // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
@@ -235,7 +235,7 @@ public:
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00000B08ECF1D834C4C16E38E42AD5E32D7AA0E471EDFD004BA981DE5920CBFA");
+        consensus.BIP34Hash = uint256S("0x000007317933F7465D8C0CB3B4456006A60B77547662D37CAC58AA6D37C5D271");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 90; // Simplecointest: 90 seconds
         consensus.nPowTargetSpacing = 90; // Simplecointest: 90 seconds
@@ -277,10 +277,10 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1530748801, 1299500, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1530748801, 759650, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000B08ECF1D834C4C16E38E42AD5E32D7AA0E471EDFD004BA981DE5920CBFA"));
-        assert(genesis.hashMerkleRoot == uint256S("0x041625D3EA2EAEB1E79E3FAEA3063FE383D746365C7237C2CF3021B478B722B7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000007317933F7465D8C0CB3B4456006A60B77547662D37CAC58AA6D37C5D271"));
+        assert(genesis.hashMerkleRoot == uint256S("0xD6590146B4F2DB94A85E9CB63E9953437FE731D74B0DF8B6267E2E6B039F8CA5"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -313,7 +313,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (    0, uint256S("0x00000B08ECF1D834C4C16E38E42AD5E32D7AA0E471EDFD004BA981DE5920CBFA")),
+            (    0, uint256S("0x000007317933F7465D8C0CB3B4456006A60B77547662D37CAC58AA6D37C5D271")),
 
             1530748801, // * UNIX timestamp of last checkpoint block
             0,       // * total number of transactions between genesis and last checkpoint
@@ -385,10 +385,10 @@ public:
         nDefaultPort = 19019;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1530748802, 5052341, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1530748802, 1110783, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000A2505F92ED1FA6D2810276D1E1C44964DE63B1C1DC9BAFDF620FA91F2E3"));
-        assert(genesis.hashMerkleRoot == uint256S("0x08A6569CEFBF61A470BDB9764076F91FA11B7138E17765D8D819E374715C35CF"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000A1F7029462D2E1AB6768190A7630E5596A5F067EF63C1C43742AD5FFFC0"));
+        assert(genesis.hashMerkleRoot == uint256S("0xD6590146B4F2DB94A85E9CB63E9953437FE731D74B0DF8B6267E2E6B039F8CA5"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.
@@ -403,7 +403,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x00000A2505F92ED1FA6D2810276D1E1C44964DE63B1C1DC9BAFDF620FA91F2E3")),
+            ( 0, uint256S("0x00000A1F7029462D2E1AB6768190A7630E5596A5F067EF63C1C43742AD5FFFC0")),
             0,
             0,
             0

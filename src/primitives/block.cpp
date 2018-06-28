@@ -13,11 +13,9 @@
 
 uint256 CBlockHeader::GetHash() const
 {
-//    uint256 powHash;
-//    lyra2z_hash(BEGIN(nVersion), BEGIN(powHash));
-//    return powHash;
-    return SerializeHash(*this);
-
+    uint256 powHash;
+    lyra2z_hash(BEGIN(nVersion), BEGIN(powHash));
+    return powHash;
 }
 
 std::string CBlock::ToString() const
