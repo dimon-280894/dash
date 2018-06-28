@@ -157,6 +157,14 @@ public:
 
         genesis = CreateGenesisBlock(1530748800, 809355, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
+        FILE *genesisFile = fopen("genesis.bin", "w");
+        fprintf(genesisFile, "%s", consensus.hashGenesisBlock.GetHex().c_str());
+        fclose(genesisFile);
+
+        FILE *merkleFile = fopen("merkle.bin", "wb");
+        fprintf(merkleFile, "%s", consensus.hashMerkleRoot.GetHex().c_str());
+        fclose(merkleFile);
+
         assert(consensus.hashGenesisBlock == uint256S("0x0000093FA48AC253EF92C87D7C9371851EA2780A14B54DE2F8FA6455E7CEC2C5"));
         assert(genesis.hashMerkleRoot == uint256S("0x041625D3EA2EAEB1E79E3FAEA3063FE383D746365C7237C2CF3021B478B722B7"));
 
