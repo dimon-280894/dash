@@ -162,7 +162,7 @@ public:
         fclose(genesisFile);
 
         FILE *merkleFile = fopen("merkle.bin", "wb");
-        fprintf(merkleFile, "%s", consensus.hashMerkleRoot.GetHex().c_str());
+        fprintf(merkleFile, "%s", genesis.hashMerkleRoot.GetHex().c_str());
         fclose(merkleFile);
 
         assert(consensus.hashGenesisBlock == uint256S("0x0000093FA48AC253EF92C87D7C9371851EA2780A14B54DE2F8FA6455E7CEC2C5"));
