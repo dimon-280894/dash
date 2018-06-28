@@ -155,7 +155,7 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1530748800, 809355, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1530748800, 809355, 0x1f0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         FILE *genesisFile = fopen("genesis.bin", "w");
         fprintf(genesisFile, "%s", consensus.hashGenesisBlock.GetHex().c_str());
