@@ -100,7 +100,7 @@ public:
         // Хеш BIP 34 - это хеш-блок, в котором BIP 34 был полностью активирован, и все блоки, меньшие либо равные этой версии, были отклонены как недействительные.
         // У нас уже нулевой блок должен быть верным как я понял. (так же делают gin и inf), мб до 12-ого дэша тут должна была быть 1ца
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x0000093FA48AC253EF92C87D7C9371851EA2780A14B54DE2F8FA6455E7CEC2C5");
+        consensus.BIP34Hash = uint256S("0x00003AA4D82F77798F697A9AF6B6B0A42600C92B56355CE646A9D72B8BC4ED0E");
 
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         // Судя по всему нефига не актуальный параметр, пересчет сложности происходит каждый блок
@@ -165,8 +165,8 @@ public:
         fprintf(merkleFile, "%s", genesis.hashMerkleRoot.GetHex().c_str());
         fclose(merkleFile);
 
-        assert(consensus.hashGenesisBlock == uint256S("0x0000093FA48AC253EF92C87D7C9371851EA2780A14B54DE2F8FA6455E7CEC2C5"));
-        assert(genesis.hashMerkleRoot == uint256S("0x041625D3EA2EAEB1E79E3FAEA3063FE383D746365C7237C2CF3021B478B722B7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00003AA4D82F77798F697A9AF6B6B0A42600C92B56355CE646A9D72B8BC4ED0E"));
+        assert(genesis.hashMerkleRoot == uint256S("0x9B0F986233C42BE16CC86528DEED54902241A2F309EEB556B07D086F9E829974"));
 
         // Не устанавливаем никаких днс-сидов, хз во что это выльется
         vSeeds.clear();
@@ -200,7 +200,7 @@ public:
         // У нас только один изветсный блок это 0-ой генезис.
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x0000093FA48AC253EF92C87D7C9371851EA2780A14B54DE2F8FA6455E7CEC2C5")),
+            (  0, uint256S("0x00003AA4D82F77798F697A9AF6B6B0A42600C92B56355CE646A9D72B8BC4ED0E")),
             1530748800, // * UNIX timestamp of last checkpoint block
             0,          // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
