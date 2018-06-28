@@ -166,7 +166,7 @@ public:
         fclose(merkleFile);
 
         assert(consensus.hashGenesisBlock == uint256S("0x00000C0D3473724FDEABFF6C5DE692CE03D18451F78EDDBD53983AFCBC3DCB3A"));
-        assert(genesis.hashMerkleRoot == uint256S("0xD6590146B4F2DB94A85E9CB63E9953437FE731D74B0DF8B6267E2E6B039F8CA5"));
+        assert(genesis.hashMerkleRoot == uint256S("0xA58C9F036B2E7E26B6F80D4BD731E77F4353993EB69C5EA894DBF2B4460159D6"));
 
         // Не устанавливаем никаких днс-сидов, хз во что это выльется
         vSeeds.clear();
@@ -280,7 +280,7 @@ public:
         genesis = CreateGenesisBlock(1530748801, 759650, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000007317933F7465D8C0CB3B4456006A60B77547662D37CAC58AA6D37C5D271"));
-        assert(genesis.hashMerkleRoot == uint256S("0xD6590146B4F2DB94A85E9CB63E9953437FE731D74B0DF8B6267E2E6B039F8CA5"));
+        assert(genesis.hashMerkleRoot == uint256S("0xA58C9F036B2E7E26B6F80D4BD731E77F4353993EB69C5EA894DBF2B4460159D6"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -388,7 +388,7 @@ public:
         genesis = CreateGenesisBlock(1530748802, 1110783, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x00000A1F7029462D2E1AB6768190A7630E5596A5F067EF63C1C43742AD5FFFC0"));
-        assert(genesis.hashMerkleRoot == uint256S("0xD6590146B4F2DB94A85E9CB63E9953437FE731D74B0DF8B6267E2E6B039F8CA5"));
+        assert(genesis.hashMerkleRoot == uint256S("0xA58C9F036B2E7E26B6F80D4BD731E77F4353993EB69C5EA894DBF2B4460159D6"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.
