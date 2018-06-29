@@ -13,6 +13,9 @@
 
 #include <vector>
 
+static const int64_t SINGLE_BLOCK_REWARD = 50;
+static const int64_t PREMINE_REWARD = 50000;
+
 struct CDNSSeedData {
     std::string name, host;
     CDNSSeedData(const std::string &strName, const std::string &strHost) : name(strName), host(strHost) {}

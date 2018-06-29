@@ -77,7 +77,7 @@ public:
         // Через сколько блоков начинать выплаты мастер нодам
         consensus.nMasternodePaymentsStartBlock = 40; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock (~1 hour)
         // not used
-        // Сами dash пишут что эти параметры не используют
+
         consensus.nMasternodePaymentsIncreaseBlock = 999999999; // actual historical value
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
         consensus.nInstantSendKeepLock = 24;
@@ -85,6 +85,7 @@ public:
         consensus.nBudgetPaymentsCycleBlocks = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nBudgetPaymentsWindowBlocks = 100;
         consensus.nBudgetProposalEstablishingTime = 60*60*24;
+        // Блок с которого включено голосование
         consensus.nSuperblockStartBlock = 999999999; // The block at which 12.1 goes live (end of final 12.0 budget cycle)
         consensus.nSuperblockCycle = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         // end of not used
@@ -155,15 +156,8 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1530144000, 911424, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1530144000, 911424, 0x1e0ffff0, 1, SINGLE_BLOCK_REWARD * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        FILE *genesisFile = fopen("genesis.bin", "w");
-        fprintf(genesisFile, "%s", consensus.hashGenesisBlock.GetHex().c_str());
-        fclose(genesisFile);
-
-        FILE *merkleFile = fopen("merkle.bin", "wb");
-        fprintf(merkleFile, "%s", genesis.hashMerkleRoot.GetHex().c_str());
-        fclose(merkleFile);
 
         assert(consensus.hashGenesisBlock == uint256S("0x00000E170AFD6E2AF57141D51ACB1000233851DAEBA208D588AD4984C0809EE7"));
         assert(genesis.hashMerkleRoot == uint256S("0xA58C9F036B2E7E26B6F80D4BD731E77F4353993EB69C5EA894DBF2B4460159D6"));
@@ -194,6 +188,7 @@ public:
         fTestnetToBeDeprecatedFieldRPC = false;
 
         nPoolMaxTransactions = 3;
+        // Если в течении этого времени не было найдено ни одного блока, то останавливаем синхранизацию
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
         strSporkPubKey = "04549ac134f694c0243f503e8c8a9a986f5de6610049c40b07816809b0d1d06a21b07be27b9bb555931773f62ba6cf35a25fd52f694d4e1106ccd237a7bb899fdd";
 
@@ -277,7 +272,7 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1530144001, 827752, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1530144001, 827752, 0x1e0ffff0, 1, SINGLE_BLOCK_REWARD * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x00000949EBE51A48D481D292A4E85B496199A6DC992DBACC3C92722D0AA5191E"));
         assert(genesis.hashMerkleRoot == uint256S("0xA58C9F036B2E7E26B6F80D4BD731E77F4353993EB69C5EA894DBF2B4460159D6"));
@@ -385,7 +380,7 @@ public:
         nDefaultPort = 19019;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1530144002, 855240, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1530144002, 855240, 0x1e0ffff0, 1, SINGLE_BLOCK_REWARD * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000008660E91CBF7AA15ECE07D6BA2F338EB4B1482EFD0E1D30E48F1AE7AD2A1"));
         assert(genesis.hashMerkleRoot == uint256S("0xA58C9F036B2E7E26B6F80D4BD731E77F4353993EB69C5EA894DBF2B4460159D6"));
@@ -399,7 +394,7 @@ public:
         fMineBlocksOnDemand = true;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
+        nFulfilledRequestExpireTime = 10 * 24 * 60 * 60; // fulfilled requests expire in 10 days minutes
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
