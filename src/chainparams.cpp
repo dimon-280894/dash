@@ -101,7 +101,7 @@ public:
         // Хеш BIP 34 - это хеш-блок, в котором BIP 34 был полностью активирован, и все блоки, меньшие либо равные этой версии, были отклонены как недействительные.
         // У нас уже нулевой блок должен быть верным как я понял. (так же делают gin и inf), мб до 12-ого дэша тут должна была быть 1ца
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00000E170AFD6E2AF57141D51ACB1000233851DAEBA208D588AD4984C0809EE7");
+        consensus.BIP34Hash = uint256S("0x000001FEE2154EAD2EA9E59D2D500DAD000AB54C916A79251D9785B7B9E6C617");
 
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         // Судя по всему нефига не актуальный параметр, пересчет сложности происходит каждый блок
@@ -156,10 +156,10 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1530144000, 911424, 0x1e0ffff0, 1, SINGLE_BLOCK_REWARD * COIN);
+        genesis = CreateGenesisBlock(1530293400, 514984, 0x1e0ffff0, 1, SINGLE_BLOCK_REWARD * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("0x00000E170AFD6E2AF57141D51ACB1000233851DAEBA208D588AD4984C0809EE7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000001FEE2154EAD2EA9E59D2D500DAD000AB54C916A79251D9785B7B9E6C617"));
         assert(genesis.hashMerkleRoot == uint256S("0xA58C9F036B2E7E26B6F80D4BD731E77F4353993EB69C5EA894DBF2B4460159D6"));
 
         // Не устанавливаем никаких днс-сидов, хз во что это выльется
@@ -195,7 +195,7 @@ public:
         // У нас только один изветсный блок это 0-ой генезис.
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x00000E170AFD6E2AF57141D51ACB1000233851DAEBA208D588AD4984C0809EE7")),
+            (  0, uint256S("0x000001FEE2154EAD2EA9E59D2D500DAD000AB54C916A79251D9785B7B9E6C617")),
             1530748800, // * UNIX timestamp of last checkpoint block
             0,          // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
@@ -230,7 +230,7 @@ public:
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00000949EBE51A48D481D292A4E85B496199A6DC992DBACC3C92722D0AA5191E");
+        consensus.BIP34Hash = uint256S("0x00000BAB366522F9D075D5005928DF847338549CF888E802A38009135505F343");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 90; // Simplecointest: 90 seconds
         consensus.nPowTargetSpacing = 90; // Simplecointest: 90 seconds
@@ -272,9 +272,9 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1530144001, 827752, 0x1e0ffff0, 1, SINGLE_BLOCK_REWARD * COIN);
+        genesis = CreateGenesisBlock(1530293401, 306964, 0x1e0ffff0, 1, SINGLE_BLOCK_REWARD * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000949EBE51A48D481D292A4E85B496199A6DC992DBACC3C92722D0AA5191E"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000BAB366522F9D075D5005928DF847338549CF888E802A38009135505F343"));
         assert(genesis.hashMerkleRoot == uint256S("0xA58C9F036B2E7E26B6F80D4BD731E77F4353993EB69C5EA894DBF2B4460159D6"));
 
         vFixedSeeds.clear();
@@ -308,7 +308,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (    0, uint256S("0x00000949EBE51A48D481D292A4E85B496199A6DC992DBACC3C92722D0AA5191E")),
+            (    0, uint256S("0x00000BAB366522F9D075D5005928DF847338549CF888E802A38009135505F343")),
 
             1530748801, // * UNIX timestamp of last checkpoint block
             0,       // * total number of transactions between genesis and last checkpoint
